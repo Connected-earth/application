@@ -23,13 +23,31 @@ function LoginForm() {
     const [password, setPassword] = useState("");
     const {setToken} = useAuth();
     const navigate = useNavigate();
+
+    const axiosInstance = axios.create();
+    axiosInstance.defaults.maxRedirects = 0; // Set to 0 to prevent automatic redirects
+    axiosInstance.interceptors.response.use(
+        response => response,
+        error => {
+            if (error.response && [301, 302, 308].includes(error.response.status)) {
+                const redirectUrl = error.response.headers.location;
+                return axiosInstance.get(redirectUrl);
+            }
+            return Promise.reject(error);
+        }
+    );
+
     const handleSubmit = async (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         const user = {
             email: email,
             password: password,
         }
-        axios.post(API_URL + LOGIN_URL, user)
+        axios.post(API_URL + LOGIN_URL, user, {
+            headers: {
+                'Same Origin': 'Lax',
+            }
+        })
             .then((response ) => {
                 const token = response.data.access_token;
                 setToken(token);
