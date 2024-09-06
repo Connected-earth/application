@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import './index.css';
-import AuthProvider from "./provider/authProvider";
-import Routes from "./routes";
+import AuthProvider from './provider/authProvider';
+import Routes from './routes';
 
 function App() {
   // Dynamically add the font link when the component mounts
@@ -29,15 +29,14 @@ function App() {
 
   // Set the title of the page
   useEffect(() => {
-    document.title = "PlantKeeper";
+    document.title = 'PlantKeeper';
   }, []);
 
   return (
-      <AuthProvider>
-        <Routes />
-      </AuthProvider>
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
   );
-
 }
 
 export default App;

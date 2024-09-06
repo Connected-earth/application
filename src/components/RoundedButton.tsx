@@ -13,24 +13,29 @@
  *   - Rachel Tranchida
  */
 
-import React from "react";
+import React from 'react';
 
 interface ButtonProps {
-    text: string;
-    textColor: string;
-    bgColor: string;
-    onClick: () => void;
+  text: string;
+  textColor: string;
+  bgColor: string;
+  onClick: () => void;
 }
 
-const RoundedButton: React.FC<ButtonProps> = ({ text, textColor, bgColor, onClick }) => {
-    return (
-        <button
-            className={`btn px-2 py-1 -inline-block rounded-lg text-center border border-black ${textColor} ${bgColor}`}
-            onClick={onClick}
-        >
-            {text}
-        </button>
-    );
-}
+const RoundedButton: React.FC<ButtonProps> = ({
+  text,
+  textColor,
+  bgColor,
+  onClick,
+}) => {
+  return (
+    <button
+      className={`btn px-2 py-1 -inline-block rounded-lg text-center border border-black ${textColor} ${bgColor}`}
+      onClick={onClick}
+    >
+      {text}
+    </button>
+  );
+};
 
 export default RoundedButton;

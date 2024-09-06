@@ -78,15 +78,15 @@ development process and a maintainable, efficient application. Below, we explain
 
 ### React
 
-We chose __React__ as the core framework for building the user interface for several reasons:
+We chose **React** as the core framework for building the user interface for several reasons:
 
-- __Familiarity__: As a team, we had a bit of experience with React from previous projects, which made it a natural
+- **Familiarity**: As a team, we had a bit of experience with React from previous projects, which made it a natural
   choice. However, our primary goal was to deepen our understanding and become more proficient with it.
-- __Component-based architecture__: React encourages breaking down the UI into reusable components. This modular
+- **Component-based architecture**: React encourages breaking down the UI into reusable components. This modular
   approach not only makes the codebase easier to maintain but also allows us to isolate and manage different parts of
   the UI independently, improving code readability and reusability. For example, we made components to represent the
   navbar, the plants description or the sensors description that we reused in multiple places in the app.
-- __Efficient rendering__: React’s __virtual DOM__ enables efficient updates to the UI by only re-rendering components
+- **Efficient rendering**: React’s **virtual DOM** enables efficient updates to the UI by only re-rendering components
   that
   have changed, which improves performance.
 
@@ -94,17 +94,17 @@ By utilizing React, we built a dynamic and scalable frontend that is adaptable t
 
 ### Tailwind CSS
 
-For styling, we opted to use __Tailwind CSS__ instead of traditional CSS. The main reasons for this choice were:
+For styling, we opted to use **Tailwind CSS** instead of traditional CSS. The main reasons for this choice were:
 
-- __Ease of use__: Classic CSS can often become tedious, especially in maintaining large projects where style
+- **Ease of use**: Classic CSS can often become tedious, especially in maintaining large projects where style
   definitions can overlap or become repetitive. Tailwind's utility-first approach allows us to apply styles directly in
   the HTML, which makes it more intuitive and quicker to implement.
-- __Maintainability__: With Tailwind, there's no need to write long CSS files. Instead, styling is achieved using
+- **Maintainability**: With Tailwind, there's no need to write long CSS files. Instead, styling is achieved using
   utility
   classes, which allows for greater consistency across the application. This keeps our styles organized and easy to
   change
   without breaking existing functionality.
-- __Customization__: Tailwind also allows for easy customization, enabling us to adjust styles as needed, while still
+- **Customization**: Tailwind also allows for easy customization, enabling us to adjust styles as needed, while still
   keeping things simple and straightforward. This was particularly useful as we didn’t want to focus heavily on
   intricate
   design work, yet needed flexibility for tweaking the UI and give a recognizable look to the app.
@@ -123,39 +123,38 @@ efficiently manage communication between the frontend and backend, ensuring smoo
 
 ### Design approach
 
-As our team does not have formal training in web design, we aimed to keep the design of __PlantKeeper__ clean and simple
+As our team does not have formal training in web design, we aimed to keep the design of **PlantKeeper** clean and simple
 with the following principles in mind:
 
-- __Minimalist color scheme__: We chose to use a basic and minimalistic color scheme to ensure the interface remains
+- **Minimalist color scheme**: We chose to use a basic and minimalistic color scheme to ensure the interface remains
   user-friendly and intuitive.
-- __Inspired layouts__: Inspired by popular websites that showcase articles and dashboards, we adhered to familiar
+- **Inspired layouts**: Inspired by popular websites that showcase articles and dashboards, we adhered to familiar
   design conventions that users are accustomed to. This decision helped us avoid overly complicated or tacky designs
   that could lessen the user experience.
-- __Functionality over aesthetic__: Our primary focus was functionality, ensuring that users can easily navigate the
+- **Functionality over aesthetic**: Our primary focus was functionality, ensuring that users can easily navigate the
   site, check their plant data, and receive notifications. A clean and straightforward design helps keep the user
   experience smooth and focused on the key features.
 
 ### React Router
 
-To manage routing within the application, we used __React Router__. React Router is a library that allows us to
+To manage routing within the application, we used **React Router**. React Router is a library that allows us to
 define routes in a declarative way, making it easier to navigate between different pages and components. By using React
 Router, we were able to create a flawless user experience with dynamic routing, enabling users to move between pages
 without the need for a full page reload.
 
 ### Route management and authentication
 
-To secure certain parts of the application, we implemented two types of routes: __public__ and __authenticated__ routes.
+To secure certain parts of the application, we implemented two types of routes: **public** and **authenticated** routes.
 
-- __Public routes__: These are accessible to all users without requiring authentication. For example, pages like the
+- **Public routes**: These are accessible to all users without requiring authentication. For example, pages like the
   login or sign-up page fall under public routes.
-- __Authenticated routes__: For pages that display sensitive or personalized data, such as the plant monitoring
+- **Authenticated routes**: For pages that display sensitive or personalized data, such as the plant monitoring
   dashboard, we created protected routes. Accessing these routes requires the user to be authenticated.
-- __JWT Authentication__: We used JWT tokens to determine if a user is logged in and authorized to access authenticated
+- **JWT Authentication**: We used JWT tokens to determine if a user is logged in and authorized to access authenticated
   routes. When a user logs in, a token is issued and stored. Each time an authenticated request is made, this token is
   verified to ensure the user has the right permissions.
-- __Redirects__: If a non-authenticated user attempts to access an authenticated route, the system will automatically
+- **Redirects**: If a non-authenticated user attempts to access an authenticated route, the system will automatically
   redirect them to the login page. This ensures security by preventing unauthorized access.
 
 By splitting the routes and using JWT tokens for authentication, we have ensured a secure and seamless user experience
 across both public and private parts of the application.
-
