@@ -1,3 +1,17 @@
+/**
+ * Project Name: PlantKeeper
+ *
+ * @created 28-08-2024
+ * @file Sensors.tsx
+ * @version 1.0.0
+ * @see https://github.com/Plant-keeper
+ *
+ * @authors
+ *   - Rafael Dousse
+ *   - Eva Ray
+ *   - Quentin Surdez
+ *   - Rachel Tranchida
+ */
 import SensorDescription from '../components/SensorDescription';
 import AuthNavbar from '../components/AuthNavbar';
 import RoundedButton from '../components/RoundedButton';
@@ -7,6 +21,8 @@ import { API_URL, USER_SENSOR_LINKED_PLANTS } from '../constants';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { SensorLinkedToPlant } from '../types';
+
+
 
 function Sensors() {
   const [sensors, setSensors] = useState<SensorLinkedToPlant[]>([]);

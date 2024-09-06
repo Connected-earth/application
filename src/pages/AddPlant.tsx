@@ -1,3 +1,17 @@
+/**
+ * Project Name: PlantKeeper
+ *
+ * @created 28-08-2024
+ * @file AddPlant.tsx
+ * @version 1.0.0
+ * @see https://github.com/Plant-keeper
+ *
+ * @authors
+ *   - Rafael Dousse
+ *   - Eva Ray
+ *   - Quentin Surdez
+ *   - Rachel Tranchida
+ */  
 import React, { useEffect, useState } from 'react';
 import PlantForm from '../components/PlantForm';
 import axios from 'axios';
