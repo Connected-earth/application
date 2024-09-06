@@ -1,3 +1,17 @@
+/**
+ * Project Name: PlantKeeper
+ *
+ * @created 28-08-2024
+ * @file Info.tsx
+ * @version 1.0.0
+ * @see https://github.com/Plant-keeper
+ *
+ * @authors
+ *   - Rafael Dousse
+ *   - Eva Ray
+ *   - Quentin Surdez
+ *   - Rachel Tranchida
+ */
 import React, {useCallback, useEffect, useState} from 'react'
 import {useLocation} from "react-router-dom";
 import AuthNavbar from "../components/AuthNavbar";
