@@ -1,3 +1,17 @@
+/**
+ * Project Name: PlantKeeper
+ *
+ * @created 28-08-2024
+ * @file AuthNavbar.tsx
+ * @version 1.0.0
+ * @see https://github.com/Plant-keeper
+ *
+ * @authors
+ *   - Rafael Dousse
+ *   - Eva Ray
+ *   - Quentin Surdez
+ *   - Rachel Tranchida
+ */
 import HomeButton from "./HomeButton";
 import React from "react";
 import { Link } from "react-router-dom";
