@@ -12,11 +12,11 @@
  *   - Quentin Surdez
  *   - Rachel Tranchida
  */
-import React from "react";
-import { RiEditLine } from "react-icons/ri";
+import React from 'react';
+import { RiEditLine } from 'react-icons/ri';
 
 interface UpdateButtonProps {
-    handleUpdate: () => void;
+  handleUpdate: () => void;
 }
 
 /**
@@ -24,13 +24,13 @@ interface UpdateButtonProps {
  * @param handleUpdate - The function to call when the button is clicked
  */
 export const UpdateButton: React.FC<UpdateButtonProps> = ({ handleUpdate }) => {
-    const handleClick = () => {
-        handleUpdate();
-    };
+  const handleClick = () => {
+    handleUpdate();
+  };
 
-    return (
-        <button onClick={handleClick} className="text-gray-500">
-            <RiEditLine />
-        </button>
-    );
+  return (
+    <button onClick={handleClick} className="text-gray-500">
+      <RiEditLine />
+    </button>
+  );
 };

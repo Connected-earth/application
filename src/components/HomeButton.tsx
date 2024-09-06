@@ -13,17 +13,17 @@
  *   - Rachel Tranchida
  */
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function HomeButton() {
-    const navigate = useNavigate();
-    const handleHomeClick = () => {
-        navigate("/");
-    };
-    return (
-        <button className={"text-white font-bold"} onClick={handleHomeClick}>
-           Home
-        </button>
-    )
+  const navigate = useNavigate();
+  const handleHomeClick = () => {
+    navigate('/');
+  };
+  return (
+    <button className={'text-white font-bold'} onClick={handleHomeClick}>
+      Home
+    </button>
+  );
 }
 export default HomeButton;

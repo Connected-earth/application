@@ -13,28 +13,25 @@
  *   - Rachel Tranchida
  */
 
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import RoundedButton from "./RoundedButton";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import RoundedButton from './RoundedButton';
 
 const LoginButton = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleLoginClick = () => {
-        navigate('/login');
-    };
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
 
-    return (
-        <RoundedButton
-            text="Login"
-            textColor="text-gray-50"
-            bgColor="bg-[#205712]"
-            onClick={handleLoginClick}
-        />
-    );
-}
+  return (
+    <RoundedButton
+      text="Login"
+      textColor="text-gray-50"
+      bgColor="bg-[#205712]"
+      onClick={handleLoginClick}
+    />
+  );
+};
 
 export default LoginButton;
-
-
-

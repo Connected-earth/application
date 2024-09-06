@@ -10,6 +10,24 @@ on:
     branches: [ "main" ]
 
 jobs:
+  check-formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check formatting
+        run: npm run format
+
   build:
 
     runs-on: ubuntu-latest

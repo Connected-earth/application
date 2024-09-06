@@ -12,57 +12,68 @@
  *   - Quentin Surdez
  *   - Rachel Tranchida
  */
-import axios from "axios";
-import Cookies from "js-cookie";
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 
 interface AuthContextType {
-    token: string | null;
-    setToken: (newToken: string | null) => void;
+  token: string | null;
+  setToken: (newToken: string | null) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 interface AuthProviderProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-    const [token, setToken_] = useState<string | null>(Cookies.get("token") || null);
+  const [token, setToken_] = useState<string | null>(
+    Cookies.get('token') || null,
+  );
 
-    const setToken = (newToken: string | null) => {
-        if (newToken) {
-            Cookies.set('token', newToken, { secure: true, sameSite: 'Strict' }); // Set the cookie directly
-        } else {
-            Cookies.remove('token'); // Remove the cookie if the token is null
-        }
-        setToken_(newToken); // Update the React state
-    };
+  const setToken = (newToken: string | null) => {
+    if (newToken) {
+      Cookies.set('token', newToken, { secure: true, sameSite: 'Strict' }); // Set the cookie directly
+    } else {
+      Cookies.remove('token'); // Remove the cookie if the token is null
+    }
+    setToken_(newToken); // Update the React state
+  };
 
-    useEffect(() => {
-        if (token) {
-            axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-            axios.defaults.headers.post['Content-Type'] = 'application/json';
-        } else {
-            delete axios.defaults.headers.common["Authorization"];
-        }
-    }, [token]);
+  useEffect(() => {
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      axios.defaults.headers.post['Content-Type'] = 'application/json';
+    } else {
+      delete axios.defaults.headers.common['Authorization'];
+    }
+  }, [token]);
 
-    const contextValue = useMemo(() => ({
-        token,
-        setToken,
-    }), [token]);
+  const contextValue = useMemo(
+    () => ({
+      token,
+      setToken,
+    }),
+    [token],
+  );
 
-    return (
-        <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
+  );
 };
 
 export const useAuth = (): AuthContextType => {
-    const context = useContext(AuthContext);
-    if (!context) {
-        throw new Error("useAuth must be used within an AuthProvider");
-    }
-    return context;
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
 };
 export default AuthProvider;
