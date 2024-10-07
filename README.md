@@ -158,3 +158,6 @@ To secure certain parts of the application, we implemented two types of routes: 
 
 By splitting the routes and using JWT tokens for authentication, we have ensured a secure and seamless user experience
 across both public and private parts of the application.
+
+
+
